@@ -20,8 +20,7 @@ type StarPropsType={
 }
 function Star(props:StarPropsType) {
 
-    if(props.selected){
-        return <div onClick={()=>props.setRate(props.starId)}><b>star</b></div>
-    }
-    return <div onClick={()=>props.setRate(props.starId)}>star</div>
+    return props.selected?
+        <div onClick={()=>props.setRate(props.starId)}><b>star</b></div>
+        :<div onClick={()=>props.setRate(props.starId)}>star</div>
 }
