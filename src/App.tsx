@@ -5,15 +5,15 @@ import {Rating} from "./components/Rating/Rating";
 
 function App() {
     return <>
-        <AppTitle/>
-        <Rating/>
-        <Accordion/>
+        <AppTitle title={'tihs is app component'}/>
+        <Rating value={5}/>
+        <Accordion title={'hello there'}/>
     </>
 }
 
-function AppTitle() {
+function AppTitle(props:any) {
     return <div>
-        this is App component
+        {props.title}
     </div>
 }
 
