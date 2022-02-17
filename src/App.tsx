@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
@@ -7,10 +7,13 @@ import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Uncontro
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 function App() {
+
+    const [rate,setRate]=useState<0 | 1 | 2 | 3 | 4 | 5>(0)
+
     return <>
         <AppTitle title={'tihs is app component'}/>
-        {/*<Rating value={1}/>*/}
-        <UncontrolledRating/>
+        <Rating rate={rate} setRate={setRate}/>
+        {/*<UncontrolledRating/>*/}
         {/*<Accordion title={'Menu'} collapsed={true}/>*/}
         {/*<Accordion title={'Users'} collapsed={false}/>*/}
         <UncontrolledAccordion title={'Menu'}/>
