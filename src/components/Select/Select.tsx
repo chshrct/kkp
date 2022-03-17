@@ -1,4 +1,5 @@
 import { useState } from "react";
+import s from "./Select.module.css";
 
 type ItemType = {
   title: string;
@@ -6,20 +7,29 @@ type ItemType = {
 };
 
 type SelectPropsType = {
-  value: string;
+  value?: string;
   onChange: (value: any) => void;
   items: ItemType[];
 };
 
 export const Select: React.FC<SelectPropsType> = (props) => {
-  const [selectValue, setSelectValue] = useState(props.value);
-  const [collapsed,setCollapsed] = useState(false)
+  const initialValue = props.value ? props.value : props.items[0].title;
+  const [selectValue, setSelectValue] = useState(initialValue);
+  const [collapsed, setCollapsed] = useState(false);
   return (
-    <div>
-      <div onClick={()=>setCollapsed(!collapsed)}>{selectValue}</div>
-      {!collapsed && <ul>
-          {props.items.map(item=><li key={item.value} onClick={()=>setSelectValue(item.title)}>{item.title}</li>)}
-      </ul>}
+    <div className={s.selectContainer}>
+      <div className={s.select} onClick={() => setCollapsed(!collapsed)}>
+        {selectValue}
+      </div>
+      {!collapsed && (
+        <div className={s.options}>
+          {props.items.map((item) => (
+            <div key={item.value} onClick={() => setSelectValue(item.title)}>
+              {item.title}
+            </div>
+          ))}
+          </div>
+      )}
     </div>
   );
 };

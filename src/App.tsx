@@ -43,7 +43,7 @@ function App() {
       {/*<UncontrolledAccordion title={'Users'}/>*/}
       <OnOff isOn={isOn} setIsOn={setIsOn} />
       <OnOff isOn={isOn} setIsOn={setIsOn} />
-      <Select value={accordionItems[0].title} onChange={() => {}} items={accordionItems} />
+      <Select value={accordionItems[2].title} onChange={() => {}} items={accordionItems} />
     </>
   );
 }

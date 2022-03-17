@@ -1,0 +1,18 @@
+
+.selectContainer{
+  border:1px solid green;
+  width: fit-content;
+}
+
+
+.select{
+  border:1px solid black;
+  height: 1rem;
+  width: fit-content;
+  padding: 3px;
+}
+
+.options{
+  position: absolute;
+  border: 1px solid red;
+}
