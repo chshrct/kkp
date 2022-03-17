@@ -4,6 +4,7 @@ import { Accordion } from "./components/Accordion/Accordion";
 import { OnOff } from "./components/OnOff/OnOff";
 import { Rating } from "./components/Rating/Rating";
 import { Select } from "./components/Select/Select";
+import { UncontrolledAccordion } from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
 function App() {
   const [rate, setRate] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
@@ -32,15 +33,8 @@ function App() {
         items={accordionItems}
         onClick={onClick}
       />
-      <Accordion
-        title={"Users"}
-        collapsed={collapsed}
-        setCollapsed={setCollapsed}
-        items={accordionItems}
-        onClick={onClick}
-      />
       {/*<UncontrolledAccordion title={'Menu'}/>*/}
-      {/*<UncontrolledAccordion title={'Users'}/>*/}
+      <UncontrolledAccordion title={'Users'}/>
       <OnOff isOn={isOn} setIsOn={setIsOn} />
       <OnOff isOn={isOn} setIsOn={setIsOn} />
       <Select value={accordionItems[2].title} onChange={() => {}} items={accordionItems} />

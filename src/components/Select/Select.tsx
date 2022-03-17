@@ -1,5 +1,5 @@
 import { useState } from "react";
-import s from "./Select.module.css";
+import s from "../Select/Select.module.css";
 
 type ItemType = {
   title: string;

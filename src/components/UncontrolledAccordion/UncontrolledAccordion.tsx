@@ -1,32 +1,46 @@
-import React, {useState} from "react";
+import { Dispatch, useReducer } from "react";
+import { ActionType, reducer, TOGGLE_COLLAPSED } from "./reducer";
 
 type AccordionPropsType = {
-    title:string
-}
-
+  title: string;
+};
 
 export function UncontrolledAccordion(props: AccordionPropsType) {
-    const [collapsed,setCollapsed]=useState(false)
-    return <>
-        <AccordionTitle title={props.title}  setCollapsed={setCollapsed} collapsed={collapsed}/>
-        {!collapsed && <AccordionBody/>}
+  //   const [collapsed, setCollapsed] = useState(false);
+  const [state, dispatch] = useReducer(reducer, { collapsed: false });
+
+  return (
+    <>
+      <AccordionTitle
+        title={props.title}
+        onClick={dispatch}
+        collapsed={state.collapsed}
+      />
+      {!state.collapsed && <AccordionBody />}
     </>
+  );
 }
 
 type AccordionTitlePropsType = {
-    title: string
-    setCollapsed:(a:boolean)=>void
-    collapsed:boolean
-}
+  title: string;
+  onClick: Dispatch<ActionType>;
+  collapsed: boolean;
+};
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    return <h3 onClick={()=>props.setCollapsed(!props.collapsed)}>{props.title}</h3>
+  return (
+    <h3 onClick={() => props.onClick({ type: TOGGLE_COLLAPSED })}>
+      {props.title}
+    </h3>
+  );
 }
 
 function AccordionBody() {
-    return <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+  return (
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
     </ul>
+  );
 }
