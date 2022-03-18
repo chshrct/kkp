@@ -3,6 +3,7 @@ import "./App.css";
 import { Accordion } from "./components/Accordion/Accordion";
 import { OnOff } from "./components/OnOff/OnOff";
 import { Rating } from "./components/Rating/Rating";
+import { Example1 } from "./components/ReactMemo/ReactMemo";
 import { Select } from "./components/Select/Select";
 import { UncontrolledAccordion } from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
@@ -23,9 +24,9 @@ function App() {
 
   return (
     <>
-      <AppTitle title={"this is app component"} />
+      {/* <AppTitle title={"this is app component"} />
       <Rating rate={rate} setRate={setRate} />
-      {/*<UncontrolledRating/>*/}
+      <UncontrolledRating/>
       <Accordion
         title={"Menu"}
         collapsed={collapsed}
@@ -33,11 +34,12 @@ function App() {
         items={accordionItems}
         onClick={onClick}
       />
-      {/*<UncontrolledAccordion title={'Menu'}/>*/}
+      <UncontrolledAccordion title={'Menu'}/>
       <UncontrolledAccordion title={'Users'}/>
       <OnOff isOn={isOn} setIsOn={setIsOn} />
       <OnOff isOn={isOn} setIsOn={setIsOn} />
-      <Select value={accordionItems[2].title} onChange={() => {}} items={accordionItems} />
+      <Select value={accordionItems[2].title} onChange={() => {}} items={accordionItems} /> */}
+      <Example1/>
     </>
   );
 }
