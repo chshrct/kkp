@@ -6,7 +6,6 @@ const NewMessagesCounter = (props: { count: number }) => {
 };
 
 const UsersSecret = (props: { users: Array<string> }) => {
-    console.log('rendered UsersSecret')
   return (
     <div>
       {props.users.map((u, i) => (
@@ -19,7 +18,6 @@ const UsersSecret = (props: { users: Array<string> }) => {
 const Users = React.memo(UsersSecret)
 
 export const Example1 = () => {
-    console.log('rendered Example')
   const [counter, setCounter] = useState(0);
   const [users, setUsers] = useState(["alesha", "volodia", "egor"]);
   const addUser = () => {
