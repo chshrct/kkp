@@ -6,6 +6,7 @@ import { Rating } from "./components/Rating/Rating";
 import { Example1 } from "./components/ReactMemo/ReactMemo";
 import { Select } from "./components/Select/Select";
 import { UncontrolledAccordion } from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import UseEffect from "./components/useEffect/useEffect";
 import UseMemo, { ReactMemoHelper, UseCallbackAlike } from "./components/UseMemo/UseMemo";
 import { UseState } from "./components/useState/useState";
 
@@ -45,7 +46,8 @@ function App() {
       {/* <UseMemo/> */}
       {/* <ReactMemoHelper/> */}
       {/* <UseCallbackAlike /> */}
-      <UseState/>
+      {/* <UseState/> */}
+      <UseEffect/>
     </>
   );
 }
