@@ -7,6 +7,7 @@ import { Example1 } from "./components/ReactMemo/ReactMemo";
 import { Select } from "./components/Select/Select";
 import { UncontrolledAccordion } from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UseMemo, { ReactMemoHelper, UseCallbackAlike } from "./components/UseMemo/UseMemo";
+import { UseState } from "./components/useState/useState";
 
 function App() {
   const [rate, setRate] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
@@ -43,7 +44,8 @@ function App() {
       <Example1/> */}
       {/* <UseMemo/> */}
       {/* <ReactMemoHelper/> */}
-      <UseCallbackAlike />
+      {/* <UseCallbackAlike /> */}
+      <UseState/>
     </>
   );
 }
