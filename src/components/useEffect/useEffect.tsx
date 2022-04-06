@@ -8,14 +8,33 @@ const UseEffect = () => {
 
   useEffect(() => {
     console.log("useEffect");
-  },[counter]);
+  }, [counter]);
 
   return (
     <>
-      <button onClick={()=>setFake(fake+1)}>{counter}</button>
+      <button onClick={() => setFake(fake + 1)}>{counter}</button>
       <div>useEffect</div>
     </>
   );
 };
 
+export const SetTimeoutExample = () => {
+  console.log("rendered useEffect");
+
+  const [counter, setCounter] = useState(0);
+  const [fake, setFake] = useState(0);
+
+  useEffect(() => {
+    setInterval(() => {
+      setCounter((state) => state + 1);
+    }, 1000);
+  }, []);
+
+  return (
+    <>
+      <button onClick={() => setFake(fake + 1)}>{counter}</button>
+      <div>useEffect</div>
+    </>
+  );
+};
 export default UseEffect;
